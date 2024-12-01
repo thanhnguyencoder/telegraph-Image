@@ -136,7 +136,7 @@ export default function Admin() {
             <button className=' text-xs sm:text-sm transition ease-in-out delay-150 bg-blue-500  hover:scale-110 hover:bg-indigo-500 duration-300p-2 p-2 rounded mr-5' onClick={handlePrevPage} disabled={currentPage === 1}>
               Trang trước
             </button>
-            <span className="text-xs sm:text-sm">第 {`${currentPage}/${searchTotal}`} 页</span>
+            <span className="text-xs sm:text-sm">trang {`${currentPage}/${searchTotal}`}</span>
             <button className='text-xs sm:text-sm transition ease-in-out delay-150 bg-blue-500  hover:scale-110 hover:bg-indigo-500 duration-300 p-2 rounded ml-5' onClick={handleNextPage}>
               Trang tiếp theo</button>
             <div className="ml-5 flex items-center">
@@ -148,7 +148,7 @@ export default function Admin() {
                 placeholder="số trang"
               />
               <button className='text-xs sm:text-sm transition ease-in-out delay-150 bg-blue-500 hover:scale-110 hover:bg-indigo-500 duration-300 p-2 rounded ml-2' onClick={handleJumpPage}>
-                nhảy
+                Đi đến
               </button>
             </div>
           </div>
