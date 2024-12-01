@@ -156,7 +156,7 @@ export default function Home() {
     const filesToUpload = file ? [file] : selectedFiles;
 
     if (filesToUpload.length === 0) {
-      toast.error('请选择要上传的文件');
+      toast.error('Vui lòng chọn file để tải lên');
       setUploading(false);
       return;
     }
@@ -206,19 +206,19 @@ export default function Home() {
             // 细化状态码处理
             switch (response.status) {
               case 400:
-                toast.error(`请求无效: ${errorMsg}`);
+                toast.error(`Yêu cầu không hợp lệ: ${errorMsg}`);
                 break;
               case 403:
-                toast.error(`无权限访问资源: ${errorMsg}`);
+                toast.error(`Không có quyền truy cập tài nguyên: ${errorMsg}`);
                 break;
               case 404:
-                toast.error(`资源未找到: ${errorMsg}`);
+                toast.error(`Không tìm thấy tài nguyên: ${errorMsg}`);
                 break;
               case 500:
-                toast.error(`服务器错误: ${errorMsg}`);
+                toast.error(`Lỗi máy chủ: ${errorMsg}`);
                 break;
               case 401:
-                toast.error(`未授权: ${errorMsg}`);
+                toast.error(`Trái phép: ${errorMsg}`);
                 break;
               default:
                 toast.error(`上传 ${file.name} 图片时出错: ${errorMsg}`);
@@ -230,11 +230,11 @@ export default function Home() {
       }
 
       setUploadedFilesNum(uploadedFilesNum + successCount);
-      toast.success(`已成功上传 ${successCount} 张图片`);
+      toast.success(`Đã tải lên thành công ${successCount} hình ảnh`);
 
     } catch (error) {
-      console.error('上传过程中出现错误:', error);
-      toast.error('上传错误');
+      console.error('Đã xảy ra lỗi trong quá trình tải lên:', error);
+      toast.error('Lỗi tải lên');
     } finally {
       setUploading(false);
     }
@@ -304,9 +304,9 @@ export default function Home() {
     try {
       await navigator.clipboard.writeText(text);
       // alert('已成功复制到剪贴板');
-      toast.success(`链接复制成功`);
+      toast.success(`Đã sao chép liên kết thành công`);
     } catch (err) {
-      toast.error("链接复制失败")
+      toast.error("Sao chép liên kết không thành công")
     }
   };
 
@@ -315,10 +315,10 @@ export default function Home() {
     const values = Array.from(codeElements).map(code => code.textContent);
     try {
       await navigator.clipboard.writeText(values.join("\n"));
-      toast.success(`链接复制成功`);
+      toast.success(`Đã sao chép liên kết thành công`);
 
     } catch (error) {
-      toast.error(`链接复制失败\n${error}`)
+      toast.error(`Sao chép liên kết không thành công\n${error}`)
     }
   }
 
@@ -459,23 +459,23 @@ export default function Home() {
     if (!isAuthapi) {
       return (
         <Link href="/login">
-          <LoginButton>登录</LoginButton>
+          <LoginButton>Đăng nhập</LoginButton>
         </Link>
       );
     }
     switch (Loginuser) {
       case 'user':
-        return <LoginButton onClick={handleSignOut}>登出</LoginButton>;
+        return <LoginButton onClick={handleSignOut}>Đăng xuất</LoginButton>;
       case 'admin':
         return (
           <Link href="/admin">
-            <LoginButton>管理</LoginButton>
+            <LoginButton>quản lý</LoginButton>
           </Link>
         );
       default:
         return (
           <Link href="/login">
-            <LoginButton>登录</LoginButton>
+            <LoginButton>Đăng nhập</LoginButton>
           </Link>
         );
     }
@@ -492,14 +492,14 @@ export default function Home() {
 
         <div className="flex flex-row">
           <div className="flex flex-col">
-            <div className="text-gray-800 text-lg">图片或视频上传
+            <div className="text-gray-800 text-lg">Tải lên hình ảnh hoặc video
             </div>
             <div className="mb-4 text-sm text-gray-500">
-              上传文件最大 5 MB;本站已托管 <span className="text-cyan-600">{Total}</span> 张图片; 你访问本站的IP是：<span className="text-cyan-600">{IP}</span>
+              Tệp tải lên tối đa 5 MB;Trang web này được lưu trữ <span className="text-cyan-600">{Total}</span> hình ảnh; Bạn đã truy cập trang web nàyIP đúng：<span className="text-cyan-600">{IP}</span>
             </div>
           </div>
           <div className="flex  flex-col sm:flex-col   md:w-auto lg:flex-row xl:flex-row  2xl:flex-row  mx-auto items-center  ">
-            <span className=" text-lg sm:text-sm   md:text-sm lg:text-xl xl:text-xl  2xl:text-xl">上传接口：</span>
+            <span className=" text-lg sm:text-sm   md:text-sm lg:text-xl xl:text-xl  2xl:text-xl">Giao diện tải lên：</span>
             <select
               value={selectedOption} // 将选择框的值绑定到状态中的 selectedOption
               onChange={handleSelectChange} // 当选择框的值发生变化时触发 handleSelectChange 函数
@@ -578,7 +578,7 @@ export default function Home() {
 
                 <div className="text-gray-500">
 
-                  拖拽文件到这里或将屏幕截图复制并粘贴到此处上传
+                  Kéo tệp vào đây hoặc sao chép và dán ảnh chụp màn hình vào đây để tải lên
                 </div>
               </div>
             )}
@@ -592,7 +592,7 @@ export default function Home() {
               className="w-full h-10 bg-blue-500 cursor-pointer flex items-center justify-center text-white"
             >
               <FontAwesomeIcon icon={faImages} style={{ width: '20px', height: '20px' }} className="mr-2" />
-              选择图片
+              Chọn ảnh
             </label>
             <input
               id="file-upload"
@@ -604,7 +604,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-5 col-span-8">
             <div className="w-full h-10 bg-slate-200 leading-10 px-4 text-center md:text-left">
-              已选择 {selectedFiles.length} 张，共 {getTotalSizeInMB(selectedFiles)} M
+              Đã chọn {selectedFiles.length} mở，chung {getTotalSizeInMB(selectedFiles)} M
             </div>
           </div>
           <div className="md:col-span-1 col-span-3">
@@ -613,7 +613,7 @@ export default function Home() {
               onClick={handleClear}
             >
               <FontAwesomeIcon icon={faTrashAlt} style={{ width: '20px', height: '20px' }} className="mr-2" />
-              清除
+              Thông thoáng
             </div>
           </div>
           <div className="md:col-span-1 col-span-5">
@@ -624,7 +624,7 @@ export default function Home() {
               onClick={() => handleUpload()}
             >
               <FontAwesomeIcon icon={faUpload} style={{ width: '20px', height: '20px' }} className="mr-2" />
-              上传
+              Tải lên
             </div>
           </div>
         </div>
@@ -702,7 +702,7 @@ export default function Home() {
               </div>
             ) : (
               // 你可以选择一个默认的内容或者返回 null
-              <div>未知类型</div>
+              <div>Loại không xác định</div>
             )}
           </div>
 
