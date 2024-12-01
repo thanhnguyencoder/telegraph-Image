@@ -16,9 +16,9 @@ const updateRating  = async (initName, rating) => {
     });
     const res_data = await res.json();
     if (res_data.success) {
-      toast.success('操作成功!');
+      toast.success('Thao tác thành công!');
     } else {
-      toast.error('操作失败!');
+      toast.error('Thao tác không thành công!');
     }
   } catch (error) {
     toast.error(error.message);
