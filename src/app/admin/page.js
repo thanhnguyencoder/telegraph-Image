@@ -56,7 +56,7 @@ export default function Admin() {
   const handleNextPage = () => {
     const nextPage = currentPage + 1;
     if (nextPage > searchTotal) { // 检查下一页是否在总页数范围内
-      toast.error('当前已为最后一页！')
+      toast.error('Đây là trang cuối cùng！')
     }
     if (nextPage <= searchTotal) { // 检查下一页是否在总页数范围内
       setCurrentPage(nextPage);
@@ -81,7 +81,7 @@ export default function Admin() {
     if (!isNaN(page) && page >= 1 && page <= searchTotal) {
       setCurrentPage(page);
     } else {
-      toast.error('请输入有效的页码！');
+      toast.error('Vui lòng nhập số trang hợp lệ！');
     }
     // setInputPage(""); // 清空输入框
   };
@@ -107,7 +107,7 @@ export default function Admin() {
           <div className="flex justify-between items-center w-full max-w-4xl px-4">
             <button className='text-white px-4 py-2  transition ease-in-out delay-150 bg-blue-500 hover:scale-110 hover:bg-indigo-500 duration-300  rounded '
               onClick={handleViewToggle}>
-              切换到 {view === 'list' ? '日志页' : '数据页'}
+              Chuyển sang {view === 'list' ? 'Trang nhật ký' : 'Trang dữ liệu'}
             </button>
             <form onSubmit={handleSearch} className="hidden sm:flex items-center">
               <input
@@ -115,15 +115,15 @@ export default function Admin() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="border rounded p-2 w-40 mr-2"
-                placeholder="搜索"
+                placeholder="Tìm kiếm"
               />
               <button type="submit" className="text-white px-4 py-2 transition ease-in-out delay-150 bg-blue-500 hover:scale-110 hover:bg-indigo-500 duration-300 rounded">
-                搜索
+                Tìm kiếm
               </button>
             </form>
           </div>
-          <Link href="/"  className="hidden sm:flex"> <button className="px-4 py-2 mx-2 w-28  sm:w-28 md:w-20 lg:w-16 xl:w-16  2xl:w-20 bg-blue-500 text-white rounded ">主页</button></Link>
-          <button onClick={() => signOut({ callbackUrl: "/" })} className="px-4 py-2 mx-2 w-28  sm:w-28 md:w-20 lg:w-16 xl:w-16  2xl:w-20 bg-blue-500 text-white rounded ">登出</button>
+          <Link href="/"  className="hidden sm:flex"> <button className="px-4 py-2 mx-2 w-28  sm:w-28 md:w-20 lg:w-16 xl:w-16  2xl:w-20 bg-blue-500 text-white rounded ">Trang chủ</button></Link>
+          <button onClick={() => signOut({ callbackUrl: "/" })} className="px-4 py-2 mx-2 w-28  sm:w-28 md:w-20 lg:w-16 xl:w-16  2xl:w-20 bg-blue-500 text-white rounded ">Đăng xuất</button>
         </header>
 
         <main className="my-[60px] w-9/10  sm:w-9/10 md:w-9/10 lg:w-9/10 xl:w-3/5 2xl:w-full">
@@ -134,21 +134,21 @@ export default function Admin() {
         <div className="fixed inset-x-0 bottom-0 h-[50px]  w-full  flex  z-50 justify-center items-center bg-white ">
           <div className="pagination mt-5 mb-5 flex justify-center items-center">
             <button className=' text-xs sm:text-sm transition ease-in-out delay-150 bg-blue-500  hover:scale-110 hover:bg-indigo-500 duration-300p-2 p-2 rounded mr-5' onClick={handlePrevPage} disabled={currentPage === 1}>
-              上一页
+              Trang trước
             </button>
             <span className="text-xs sm:text-sm">第 {`${currentPage}/${searchTotal}`} 页</span>
             <button className='text-xs sm:text-sm transition ease-in-out delay-150 bg-blue-500  hover:scale-110 hover:bg-indigo-500 duration-300 p-2 rounded ml-5' onClick={handleNextPage}>
-              下一页</button>
+              Trang tiếp theo</button>
             <div className="ml-5 flex items-center">
               <input
                 type="number"
                 value={inputPage}
                 onChange={(e) => setInputPage(e.target.value)}
                 className="border rounded p-2 w-20"
-                placeholder="页码"
+                placeholder="số trang"
               />
               <button className='text-xs sm:text-sm transition ease-in-out delay-150 bg-blue-500 hover:scale-110 hover:bg-indigo-500 duration-300 p-2 rounded ml-2' onClick={handleJumpPage}>
-                跳转
+                nhảy
               </button>
             </div>
           </div>
