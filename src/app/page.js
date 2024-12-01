@@ -74,7 +74,7 @@ export default function Home() {
 
 
     } catch (error) {
-      console.error('请求出错:', error);
+      console.error('Lỗi yêu cầu:', error);
     }
   };
   const isAuth = async () => {
@@ -101,7 +101,7 @@ export default function Home() {
 
 
     } catch (error) {
-      console.error('请求出错:', error);
+      console.error('Lỗi yêu cầu:', error);
     }
   };
 
@@ -121,7 +121,7 @@ export default function Home() {
 
 
     } catch (error) {
-      console.error('请求出错:', error);
+      console.error('Lỗi yêu cầu:', error);
     }
   }
 
@@ -492,10 +492,10 @@ export default function Home() {
 
         <div className="flex flex-row">
           <div className="flex flex-col">
-            <div className="text-gray-800 text-lg">Tải lên hình ảnh hoặc video
+            <div className="text-gray-800 text-lg">Hệ thống lưu trữ ảnh và file
             </div>
             <div className="mb-4 text-sm text-gray-500">
-              Tệp tải lên tối đa 5 MB;Trang web này được lưu trữ <span className="text-cyan-600">{Total}</span> hình ảnh; Bạn đã truy cập trang web nàyIP đúng：<span className="text-cyan-600">{IP}</span>
+              Tệp tải lên tối đa 5 MB;Đã lưu trữ tổng cộng <span className="text-cyan-600">{Total}</span> hình ảnh; Bạn đã truy cập trang web nàyIP đúng：<span className="text-cyan-600">{IP}</span>
             </div>
           </div>
           <div className="flex  flex-col sm:flex-col   md:w-auto lg:flex-row xl:flex-row  2xl:flex-row  mx-auto items-center  ">
@@ -578,7 +578,7 @@ export default function Home() {
 
                 <div className="text-gray-500">
 
-                  Kéo tệp vào đây hoặc sao chép và dán ảnh chụp màn hình vào đây để tải lên
+                  Kéo và thả tệp vào đây hoặc sao chép và dán ảnh chụp màn hình vào đây để tải lên
                 </div>
               </div>
             )}
@@ -604,7 +604,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-5 col-span-8">
             <div className="w-full h-10 bg-slate-200 leading-10 px-4 text-center md:text-left">
-              Đã chọn {selectedFiles.length} mở，chung {getTotalSizeInMB(selectedFiles)} M
+              Đã chọn {selectedFiles.length} bức ảnh，tổng cộng {getTotalSizeInMB(selectedFiles)} MB
             </div>
           </div>
           <div className="md:col-span-1 col-span-3">
@@ -613,7 +613,7 @@ export default function Home() {
               onClick={handleClear}
             >
               <FontAwesomeIcon icon={faTrashAlt} style={{ width: '20px', height: '20px' }} className="mr-2" />
-              Thông thoáng
+              Xóa
             </div>
           </div>
           <div className="md:col-span-1 col-span-5">
