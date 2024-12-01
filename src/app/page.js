@@ -495,7 +495,7 @@ export default function Home() {
             <div className="text-gray-800 text-lg">Hệ thống lưu trữ ảnh và file
             </div>
             <div className="mb-4 text-sm text-gray-500">
-              Tệp tải lên tối đa 5 MB;Đã lưu trữ tổng cộng <span className="text-cyan-600">{Total}</span> hình ảnh; Bạn đã truy cập trang web nàyIP đúng：<span className="text-cyan-600">{IP}</span>
+              Tệp tải lên tối đa 5 MB;Đã lưu trữ tổng cộng <span className="text-cyan-600">{Total}</span> hình ảnh; IP của bạn：<span className="text-cyan-600">{IP}</span>
             </div>
           </div>
           <div className="flex  flex-col sm:flex-col   md:w-auto lg:flex-row xl:flex-row  2xl:flex-row  mx-auto items-center  ">
@@ -698,11 +698,11 @@ export default function Home() {
             ) : boxType === "other" ? (
               // 这里可以渲染你想要的其他内容或组件
               <div className="p-4 bg-white text-black rounded">
-                <p>Unsupported file type</p>
+                <p>Loại tệp không được hỗ trợ</p>
               </div>
             ) : (
               // 你可以选择一个默认的内容或者返回 null
-              <div>Loại không xác định</div>
+              <div>Không xác định</div>
             )}
           </div>
 
