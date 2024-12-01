@@ -46,7 +46,7 @@ export default function Table({ data: initialData = [] }) {
 
     const handleCopy = (text) => {
         navigator.clipboard.writeText(text).then(() => {
-            toast.success(`链接复制成功`);
+            toast.success(`Đã sao chép liên kết thành công`);
         });
     };
 
@@ -65,7 +65,7 @@ export default function Table({ data: initialData = [] }) {
             });
             const res_data = await res.json();
             if (res_data.success) {
-                toast.success('删除成功!');
+                toast.success('Xóa thành công!');
                 setData(prevData => prevData.filter(item => item.url !== initName));
             } else {
                 toast.error(res_data.message);
@@ -77,7 +77,7 @@ export default function Table({ data: initialData = [] }) {
 
 
     const handleDelete = async (initName) => {
-        const confirmed = window.confirm('你确定要删除这个项目吗？');
+        const confirmed = window.confirm('Bạn có chắc chắn muốn xóa dự án này?');
         if (confirmed) {
             await deleteItem(initName);
         }
@@ -281,7 +281,7 @@ export default function Table({ data: initialData = [] }) {
                                             }}
                                             className="ml-2 px-3 py-1 text-sm font-medium text-white bg-red-600 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
                                         >
-                                            删除
+                                            Xóa
                                         </button>
                                     </div>
                                 </td>
