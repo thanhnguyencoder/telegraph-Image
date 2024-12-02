@@ -469,7 +469,7 @@ export default function Home() {
       case 'admin':
         return (
           <Link href="/admin">
-            <LoginButton>quản lý</LoginButton>
+            <LoginButton>Quản lý</LoginButton>
           </Link>
         );
       default:
