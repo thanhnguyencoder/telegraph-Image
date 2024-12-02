@@ -47,7 +47,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       })
   ],
   pages: {
-    //signIn: '/login', // 登录页面的路径
+    signIn: '/login', // 登录页面的路径
     signOut: '/'
   },
   session: {
