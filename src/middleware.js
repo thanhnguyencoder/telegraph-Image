@@ -3,8 +3,8 @@ import { auth } from "@/auth"
 
 const ROOT = '/';
 const PUBLIC_ROUTES = ['/'];
-//const DEFAULT_REDIRECT = '/login';
-//const LOGIN = '/login'
+const DEFAULT_REDIRECT = '/login';
+const LOGIN = '/login'
 const API_ADMIN = "/api/admin"
 const ADMIN_PAGE = "/admin"
 const AUTH_API = "/api/enableauthapi"
