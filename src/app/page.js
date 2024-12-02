@@ -455,22 +455,22 @@ export default function Home() {
     signOut({ callbackUrl: '/' });
   };
 
-  const renderButton = () => {
-    if (!isAuthapi) {
-      return (
-        // <Link href="/login">
-        //   <LoginButton>Đăng nhập</LoginButton>
-        // </Link>
-      );
-    }
+  // const renderButton = () => {
+  //   if (!isAuthapi) {
+  //     return (
+  //       // <Link href="/login">
+  //       //   <LoginButton>Đăng nhập</LoginButton>
+  //       // </Link>
+  //     );
+  //   }
     switch (Loginuser) {
       case 'user':
         return <LoginButton onClick={handleSignOut}>Đăng xuất</LoginButton>;
       case 'admin':
         return (
-          // <Link href="/admin">
-          //   <LoginButton>quản lý</LoginButton>
-          // </Link>
+          <Link href="/admin">
+            <LoginButton>quản lý</LoginButton>
+          </Link>
         );
       default:
         return (
