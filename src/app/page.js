@@ -458,9 +458,9 @@ export default function Home() {
   const renderButton = () => {
     if (!isAuthapi) {
       return (
-        // <Link href="/login">
-        //   <LoginButton>Đăng nhập</LoginButton>
-        // </Link>
+        <Link href="/login">
+          <LoginButton>Đăng nhập</LoginButton>
+        </Link>
       );
     }
     switch (Loginuser) {
