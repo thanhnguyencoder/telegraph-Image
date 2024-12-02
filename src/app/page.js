@@ -496,9 +496,12 @@ export default function Home() {
             </div>
             <div className="mb-4 text-sm text-gray-500">
               Kích thước mỗi tệp tải lên tối đa 50 MB (tối đa 20 file trong 1 phút)
-              <br>Đã lưu trữ tổng cộng <span className="text-cyan-600">{Total}</span> hình ảnh
-              <br>Các định dạng hỗ trợ image/*, video/*, .zip, .tar, .gz, .rar, .7z, .xz, .bz2
-              <br>IP của bạn：<span className="text-cyan-600">{IP}</span>
+              <br>
+              Đã lưu trữ tổng cộng <span className="text-cyan-600">{Total}</span> hình ảnh
+              <br>
+              Các định dạng hỗ trợ image/*, video/*, .zip, .tar, .gz, .rar, .7z, .xz, .bz2
+              <br>
+              IP của bạn：<span className="text-cyan-600">{IP}</span>
             </div>
           </div>
           <div className="flex  flex-col sm:flex-col   md:w-auto lg:flex-row xl:flex-row  2xl:flex-row  mx-auto items-center hidden ">
